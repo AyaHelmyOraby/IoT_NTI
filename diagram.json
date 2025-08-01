@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "Philomath",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -19.2,
+      "left": 148.84,
+      "attrs": { "env": "micropython-20231227-v1.22.0" }
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -65,
+      "left": 393.6,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -124.6, "left": 124.8, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -95.24, "left": -38.4, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -9.6, "left": 47.4, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": -114.44, "left": 316.8, "attrs": {} },
+    { "type": "wokwi-led", "id": "led2", "top": 178.8, "left": 90.2, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "vcc1:VCC", "relay1:VCC", "red", [ "v28.8", "h57.6", "v-67.2", "h96" ] ],
+    [ "gnd1:GND", "relay1:GND", "black", [ "v0" ] ],
+    [ "esp:GND.2", "ntc1:GND", "black", [ "v0" ] ],
+    [ "ntc1:VCC", "vcc2:VCC", "red", [ "h0" ] ],
+    [ "esp:34", "ntc1:OUT", "green", [ "h-28.65", "v-86.4", "h9.6" ] ],
+    [ "esp:12", "relay1:IN", "green", [ "v0", "h-38.25", "v-211.2" ] ],
+    [ "esp:GND.1", "led2:C", "black", [ "h-86.25", "v115.2", "h144" ] ],
+    [ "esp:13", "led2:A", "green", [ "h-19.05", "v105.6", "h-9.6" ] ]
+  ],
+  "dependencies": {}
+}
