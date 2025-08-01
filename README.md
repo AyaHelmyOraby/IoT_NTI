@@ -11,7 +11,7 @@ This project demonstrates a simple embedded system using the **ESP32** microcont
 | ESP32         | Microcontroller | Main controller of the system      |
 | LED           | Output Device  | Visual indicator (e.g., ON/OFF)    |
 | Relay Module  | Output Device  | Controls high-voltage appliances   |
-| Sensor (e.g., DHT11, PIR) | Input Device   | Sends data to the ESP32 (e.g., temp, motion) |
+| Sensor        | Input Device   | Sends data to the ESP32 (e.g., temp, motion) |
 
 ---
 
