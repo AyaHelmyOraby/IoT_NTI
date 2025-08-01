@@ -15,7 +15,7 @@ This project demonstrates a simple embedded system using the **ESP32** microcont
 
 ---
 
-## ⚙ System Description
+##  System Description
 
 - **Sensor** provides input data to the **ESP32**.
 - The **ESP32** processes the sensor input.
